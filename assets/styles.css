@@ -1,0 +1,237 @@
+/* Reset zodat niks stoort */
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+body.project-bg {
+    background-image: url('asset/img/aardbei');
+    background-size: cover;        /* vult hele scherm */
+    background-position: center;   /* mooi gecentreerd */
+    background-repeat: no-repeat;  /* niet herhalen */
+}
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap');
+
+/* Container styling */
+.container {
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    max-width: 65vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-top: 2em;
+}
+
+p {
+    margin-top: 0.5em;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    line-height: 1.2;
+}
+
+.text-block {
+    background-color: #0b3d2e;
+    color: #74a12e;
+    padding: 15px 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.section {
+    background-color: #b9dca9;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    color: #74a12e;
+}
+
+.content-main {
+    background-color: #fae6e7;
+    color: #74a12e;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Titels */
+.content-main h1 {
+    color: #74a12e;
+    font-size: 3em;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.content-main h2 {
+    color: #fc9fb1;  /* juiste roze subtitel kleur */
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* Paragrafen */
+.content-main p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.animate-flipIn {
+  animation: flipIn 0.6s ease-out forwards;
+}
+
+/* Optionele styling van content zodat het leesbaar is */
+.content {
+  padding: 2rem;
+}
+body.project-bg {
+  background-image: url("../train.png");
+  background-size: 1000px; /* pas aan hoe groot je elke aardbei wilt */
+  background-repeat: repeat; /* herhaal het patroon */
+  background-attachment: fixed; /* houdt het op zijn plek als je scrollt */
+  background-position: top left; /* begin altijd linksboven */
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.content-main {
+    background-color: #fae6e7;
+    color: #74a12e;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect: kaart beweegt een beetje en schaduw wordt sterker */
+.content-main:hover {
+    transform: translateY(-8px) scale(1.00);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+
+.card {
+  width: 400px;
+  border-radius: 15px;
+  overflow: hidden;
+  flex: 0 0 auto;
+  margin: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;           /* hoogte volgt aspect ratio van afbeelding */
+  display: block;
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 20px;           /* ruimte tussen de kaarten */
+  transition: transform 0.5s ease;
+}
+
+.display-area {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  justify-content: center; /* center de kaarten */
+  width: 100%;             /* vult de container */
+  max-width: 1400px;       /* optioneel: maximale breedte */
+  margin: 0 auto;          /* center in pagina */
+}
+
+.cards-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.card {
+  width: 200px;
+  flex: 0 0 auto; /* voorkomen dat flex shrinkt */
+}
+
+/* CONTAINER */
+.display-area {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;              /* ruimte tussen kaarten */
+  padding: 20px 40px;     /* 20px boven/onder, 40px links/rechts */
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+.card:first-child {
+  margin-left: 20px; /* extra ruimte voor de eerste kaart */
+}
+
+.card:last-child {
+  margin-right: 20px; /* extra ruimte voor de laatste kaart */
+}
+.spacer {
+  flex: 0 0 20px; /* of de helft van je kaartbreedte */
+}
+
+/* KAARTEN */
+.card {
+  flex: 0 0 auto;            /* voorkom dat flex shrinkt */
+  width: 400px;               /* breedte kaart, pas aan */
+  scroll-snap-align: start;  /* snap op het begin van elke kaart */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+
+/* AFBEELDINGEN */
+.card img {
+  width: 100%;          /* 90% van de kaartbreedte */
+  height: auto;        /* behoudt aspect ratio */
+  display: block;
+  margin: 0 auto;      /* center afbeelding horizontaal */
+  border-radius: 10px; /* optioneel, voor mooie afronding */
+}
+/* OPTIONAL: scrollbar styling (voor mooiere weergave) */
+.display-area::-webkit-scrollbar {
+  height: 10px;
+}
+.display-area::-webkit-scrollbar-thumb {
+  background: #74a12e;
+  border-radius: 5px;
+}
+.display-area::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+img {
+    width: 400px; /* Sets the image width */
+    height: 300px; /* Sets the image height */
+}
+.display-area {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+.card {
+  flex: 0 0 auto;
+  width: 400px; /* breedte afbeelding */
+}
+.display-area {
+  scroll-snap-type: x mandatory;
+}
+
+.card {
+  scroll-snap-align: start;
+}
