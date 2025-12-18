@@ -12,17 +12,13 @@
 <link rel="stylesheet" href="assets/typography.css">
 
 </head>
-
 <body class="project-bg min-h-screen relative text-gray-800">
-
-
   <!-- PAGE WRAPPER: 2 kolommen -->
   <div class="grid grid-cols-1 md:grid-cols-4 gap-6 p-8">
-
-    <!-- NAVIGATIE LINKS -->
     <!-- NAVIGATIE LINKS -->
 <nav class="md:col-span-1 bg-pink-300 p-6 rounded-xl shadow-md">
   <h2 class="text-xl font-bold mb-4">Week 1</h2>
+        <h2 class="text-xl font-bold mb-4">EmineUlgen GDM1</h2>
   <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-lg font-semibold">
     <!-- NAVIGATIE LINKS -->
 <nav>
@@ -125,21 +121,56 @@
   </p>
 </div>
 
+  <!-- Titel -->
+<div class="mt-10">
+  <h3 class="text-xl font-semibold mb-4 text-[#74a12e]">Low-fi prototype schets</h3>
+</div>
+
+<div class="gallery">
+
+  <!-- Klikbare Cards -->
+  <div class="card" onclick="openOverlay('schets01.jpg')">
+    <img src="schets01.jpg" alt="Figma scherm 1" class="card-img">
+    <h3 class="card-title">Low-fi Prototype 1</h3>
   </div>
 
-  
- <div class="mt-10">
-  <h3 class="text-xl font-semibold mb-4 text-[#74a12e]">Low-fi prototype schets</h3>
-        </div>
+  <div class="card" onclick="openOverlay('schets02.jpg')">
+    <img src="schets02.jpg" alt="Figma scherm 2" class="card-img">
+    <h3 class="card-title">Low-fi Prototype 2</h3>
+  </div>
 
-<div class="display-area">
-  <div class="cards-wrapper">
-    
-    <div><img src="schets01.jpg" alt=""></div>
-    <div><img src="schets02.jpg" alt=""></div>
-    <div><img src="schets03.jpg" alt=""></div>
-  </div> 
+  <div class="card" onclick="openOverlay('schets03.jpg')">
+    <img src="schets03.jpg" alt="Figma scherm 3" class="card-img">
+    <h3 class="card-title">Low-fi Prototype 3</h3>
+  </div>
+
 </div>
+
+<!-- Overlay / Lightbox -->
+<div class="overlay" id="overlay">
+  <div class="overlay-content">
+    <span class="close-btn" onclick="closeOverlay()">&times;</span>
+    <img id="overlay-img" class="overlay-image" src="" alt="">
+  </div>
+</div>
+<body>
+  <!-- Je gallery HTML hier -->
+
+  <script>
+    const overlay = document.getElementById('overlay');
+    const overlayImg = document.getElementById('overlay-img');
+
+    function openOverlay(src) {
+      overlayImg.src = src;
+      overlay.style.display = 'flex';
+    }
+
+    function closeOverlay() {
+      overlay.style.display = 'none';
+      overlayImg.src = '';
+    }
+  </script>
+</body>
 
 </body>
 </html>
