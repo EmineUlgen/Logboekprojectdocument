@@ -17,9 +17,9 @@
   <div class="grid grid-cols-1 md:grid-cols-4 gap-6 p-8">
 
     <!-- NAVIGATIE LINKS -->
-    <!-- NAVIGATIE LINKS -->
 <nav class="md:col-span-1 bg-pink-300 p-6 rounded-xl shadow-md">
   <h2 class="text-xl font-bold mb-4">Week 2</h2>
+          <h2 class="text-xl font-bold mb-4">EmineUlgen GDM1</h2>
   <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-lg font-semibold">
     <!-- NAVIGATIE LINKS -->
 <nav>
@@ -106,14 +106,60 @@
   <h3 class="text-xl font-semibold mb-4 text-[#74a12e]">Low-fi prototype schets</h3>
         </div>
 
-<div class="display-area">
-  <div class="cards-wrapper">
-    
-    <div><img src="schets1.jpg" alt=""></div>
-    <div><img src="schets2.jpg" alt=""></div>
-    <div><img src="schets3.jpg" alt=""></div>
-    <div><img src="lowprototype.jpg" alt=""></div>
+<div class="gallery">
 
-  </div> 
+  <!-- Klikbare Cards -->
+  <div class="card">
+    <img src="schets1.jpg" alt="schetsen 1" class="card-img">
+    <h3 class="card-title">Low-fi Prototype 1</h3>
+  </div>
+
+  <div class="card">
+    <img src="schets2.jpg" alt="schetsen2" class="card-img">
+    <h3 class="card-title">Low-fi Prototype 2</h3>
+  </div>
+
+  <div class="card">
+    <img src="schets3.jpg" alt="schetsen 3" class="card-img">
+    <h3 class="card-title">Low-fi Prototype 3</h3>
+  </div>
+
+  <div class="card">
+    <img src="lowprototype.jpg" alt="Low-fi Prototype 4" class="card-img">
+    <h3 class="card-title">Low-fi Prototype 4</h3>
+  </div>
+
+</div>
+
+<!-- Overlay / Lightbox -->
+<div class="overlay" id="overlay">
+  <div class="overlay-content">
+    <span class="close-btn" onclick="closeOverlay()">&times;</span>
+    <img id="overlay-img" class="overlay-image" src="" alt="">
+  </div>
+</div>
+<body>
+  <!-- je gallery HTML hier -->
+
+  <!-- script pas aan het einde -->
+  <script>
+    const overlay = document.getElementById('overlay');
+    const overlayImg = document.getElementById('overlay-img');
+
+    const images = document.querySelectorAll('.card-img');
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        overlayImg.src = img.src;
+        overlay.style.display = 'flex';
+      });
+    });
+
+    function closeOverlay() {
+      overlay.style.display = 'none';
+      overlayImg.src = '';
+    }
+  </script>
+</body>
+
 </body>
 </html>
