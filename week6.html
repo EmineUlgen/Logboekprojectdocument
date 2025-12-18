@@ -22,6 +22,7 @@
     <!-- NAVIGATIE LINKS -->
 <nav class="md:col-span-1 bg-pink-300 p-6 rounded-xl shadow-md">
   <h2 class="text-xl font-bold mb-4">Week 6</h2>
+          <h2 class="text-xl font-bold mb-4">EmineUlgen GDM1</h2>
   <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-lg font-semibold">
     <!-- NAVIGATIE LINKS -->
 <nav>
@@ -114,8 +115,42 @@
   <h3 class="text-xl font-semibold mb-4 text-[#74a12e]">verbetering html scherm</h3>
         </div>
  
-    <div><img src="tweede scherm.png" alt=""></div>
-    
-  </div> 
+   <div class="gallery">
+  <!-- Klikbare Cards -->
+  <div class="card">
+    <img src="tweede scherm.png" alt="schetsen 1" class="card-img">
+    <h3 class="card-title">Low-fi Prototype 1</h3>
+  </div>
+</div>
+
+<!-- Overlay / Lightbox -->
+<div class="overlay" id="overlay">
+  <div class="overlay-content">
+    <span class="close-btn" onclick="closeOverlay()">&times;</span>
+    <img id="overlay-img" class="overlay-image" src="" alt="">
+  </div>
+</div>
+<body>
+  <!-- je gallery HTML hier -->
+
+  <!-- script pas aan het einde -->
+  <script>
+    const overlay = document.getElementById('overlay');
+    const overlayImg = document.getElementById('overlay-img');
+
+    const images = document.querySelectorAll('.card-img');
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        overlayImg.src = img.src;
+        overlay.style.display = 'flex';
+      });
+    });
+
+    function closeOverlay() {
+      overlay.style.display = 'none';
+      overlayImg.src = '';
+    }
+  </script>
 </body>
 </html>
+
